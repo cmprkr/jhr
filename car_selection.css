@@ -1,0 +1,132 @@
+body {
+
+	padding: 0;
+	border: 0;
+	margin: 0;
+	overflow: hidden;
+
+}
+
+#left_slider {
+
+	background: gray;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	height: 100vh;
+	width: 50vw;
+	right: 50%;
+	z-index: 12;
+
+}
+
+#right_slider {
+
+	background: lightgreen;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	height: 100vh;
+	width: 50vw;
+	left: 50%;
+	z-index: 12;
+}
+
+#left_block {
+
+	background: lightgreen;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	left: 0;
+	top: 0;
+	height: 100vh;
+	width: 50vw;
+	z-index: 9;
+
+}
+
+#right_block {
+
+	background: gray;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	right: 0;
+	top: 0;
+	height: 100vh;
+	width: 50vw;
+	z-index: 9;
+
+}
+
+#button_77 {
+
+	position: absolute;
+	height: 1000px;
+	width: 20%;
+	right: 0%;
+	background: transparent;
+	z-index: 10;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
+
+#button_78 {
+
+	position: absolute;
+	height: 1000px;
+	width: 20%;
+	left: 0%;
+	background: transparent;
+	z-index: 10;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
+
+#car_77 {
+
+	position: absolute;
+	background-image: url("car-1.png");
+	width: 245px;
+	height: 1440px;
+	right: 0;
+
+}
+
+#car_78 {
+
+	position: absolute;
+	background-image: url("car-2.png");
+	width: 229px;
+	height: 1440px;
+	left: 0;
+	transform: scaleX(-1);
+
+}
+
+#car_77_flip {
+
+	position: absolute;
+	background-image: url("car-1.png");
+	width: 245px;
+	height: 1440px;
+	left: 0;
+	transform: scaleX(-1);
+
+}
+
+#car_78_flip {
+
+	position: absolute;
+	background-image: url("car-2.png");
+	width: 229px;
+	height: 1440px;
+	right: 0;
+	transform: scaleX(1);
+
+}
