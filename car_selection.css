@@ -4,6 +4,8 @@ body {
 	border: 0;
 	margin: 0;
 	overflow: hidden;
+	width: 100vw;
+	height: 100vh;
 
 }
 
@@ -22,7 +24,7 @@ body {
 
 #right_slider {
 
-	background: lightgreen;
+	background: #202124;
 	position: absolute;
 	display: flex;
 	align-items: center;
@@ -34,7 +36,7 @@ body {
 
 #left_block {
 
-	background: lightgreen;
+	background: #202124;
 	position: absolute;
 	display: flex;
 	align-items: center;
@@ -91,9 +93,8 @@ body {
 #car_77 {
 
 	position: absolute;
-	background-image: url("car-1.png");
-	width: 245px;
-	height: 1440px;
+	width: 75%;
+	height: 0px;
 	right: 0;
 
 }
@@ -101,32 +102,99 @@ body {
 #car_78 {
 
 	position: absolute;
-	background-image: url("car-2.png");
-	width: 229px;
-	height: 1440px;
+	width: 75%;
+	height: 0px;
 	left: 0;
-	transform: scaleX(-1);
 
 }
 
 #car_77_flip {
 
 	position: absolute;
-	background-image: url("car-1.png");
-	width: 245px;
-	height: 1440px;
+	width: 75%;
+	height: 0px;
 	left: 0;
-	transform: scaleX(-1);
 
 }
 
 #car_78_flip {
 
 	position: absolute;
-	background-image: url("car-2.png");
-	width: 229px;
-	height: 1440px;
+	width: 75%;
+	height: 0px;
 	right: 0;
-	transform: scaleX(1);
+
+}
+
+img {
+
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	border: 0;
+	margin: 0;
+
+}
+
+#title {
+
+	position: relative;
+	height: auto;
+	width: 35%;
+	z-index: 20;
+	top: 0;
+	left: 0;
+
+}
+
+#title .border {
+
+	background: #ffffff;
+
+}
+
+.word_pixel_container {
+
+    width: calc(100% - ((100% / 30) * 5));
+    height: 0px;
+    display: grid;
+    grid-template-columns: repeat(6, calc(100% / 6));
+    grid-template-rows: repeat(1, 100%);
+    gap: calc(100% / 30);
+    background: #transparent;
+
+}
+
+.letter_pixel_container {
+
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, calc(100% / 5));
+    grid-template-rows: repeat(5, calc(100% / 5));
+    gap: 0;
+    position: relative;
+
+}
+
+.pixel {
+
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    display: block;
+
+}
+
+.pixel.color {
+
+	background-color: #000000;
+
+}
+
+.word_pixel_spacer {
+
+	width: 100%;
+	height: 0px;
 
 }

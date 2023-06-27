@@ -98,11 +98,37 @@ body {
 
 }
 
+.fullpage_pixel_container {
+
+	padding: 0;
+	border: 0;
+	margin: 0;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(170, calc(105vw / 170));
+    grid-template-rows: repeat(80, calc(105vh / 80));
+    gap: 0;
+    position: absolute;
+    left: -10px;
+    top: -10px;
+
+}
+
 .pixel {
 
     width: 100%;
     height: 100%;
     background-color: transparent;
+    display: block;
+
+}
+
+.fullpage_pixel {
+
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
     display: block;
 
 }

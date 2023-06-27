@@ -614,48 +614,49 @@ window.addEventListener('load', function() {
 });
 
 window.addEventListener('resize', function() {
-  var powerElement = document.getElementById('power');
-  var peopleElement = document.getElementById('people');
-  var spaceElement = document.getElementById('space_container');
-  var cursor = document.getElementById('cursor');
-  var prevWidth = window.innerWidth;
-  var prevHeight = window.innerHeight;
+  if (initial_animation === false) {
+    var powerElement = document.getElementById('power');
+    var peopleElement = document.getElementById('people');
+    var spaceElement = document.getElementById('space_container');
+    var cursor = document.getElementById('cursor');
+    var prevWidth = window.innerWidth;
+    var prevHeight = window.innerHeight;
 
-  window.addEventListener('resize', function() {
-    var currentWidth = window.innerWidth;
-    var currentHeight = window.innerHeight;
+    window.addEventListener('resize', function() {
+      var currentWidth = window.innerWidth;
+      var currentHeight = window.innerHeight;
 
-    if (currentWidth !== prevWidth) {
-      
-      var powerWidth = powerElement.offsetWidth;
-      var newHeight = (powerWidth / 53) * 5;
-      powerElement.style.height = newHeight + 'px';
+      if (currentWidth !== prevWidth) {
+        
+        var powerWidth = powerElement.offsetWidth;
+        var newHeight = (powerWidth / 53) * 5;
+        powerElement.style.height = newHeight + 'px';
 
-      if (initial_animation === true) {
+        if (initial_animation === true) {
 
-        var peopleWidth = peopleElement.offsetWidth;
-        var newHeight2 = (peopleWidth / 53) * 5;
-        peopleElement.style.height = newHeight2 + 'px';
+          var peopleWidth = peopleElement.offsetWidth;
+          var newHeight2 = (peopleWidth / 53) * 5;
+          peopleElement.style.height = newHeight2 + 'px';
+
+        }
+
+        var spaceWidth = spaceElement.offsetWidth;
+        var newHeight3 = spaceWidth / 53;
+        spaceElement.style.height = newHeight3 + 'px';
+        cursor.style.height = newHeight + 'px';
+        cursor.style.width = (newHeight / 18) + 'px';
+      }
+
+      if (currentHeight !== prevHeight) {
+        
+        //
 
       }
 
-      var spaceWidth = spaceElement.offsetWidth;
-      var newHeight3 = spaceWidth / 53;
-      spaceElement.style.height = newHeight3 + 'px';
-      cursor.style.height = newHeight + 'px';
-      cursor.style.width = (newHeight / 18) + 'px';
-    }
-
-    if (currentHeight !== prevHeight) {
-      
-      //
-
-    }
-
-    prevWidth = currentWidth;
-    prevHeight = currentHeight;
-  });
-
+      prevWidth = currentWidth;
+      prevHeight = currentHeight;
+    });
+  };
 });
 
 window.dispatchEvent(new Event('resize'));
@@ -842,7 +843,37 @@ document.addEventListener("DOMContentLoaded", function() {
 
       document.body.innerHTML = '';
 
-    }, 2000);
+      const fullpage_pixel_container = document.createElement("div");
+      const parentElement = fullpage_pixel_container.parentNode;
+      fullpage_pixel_container.className = "fullpage_pixel_container";
+      document.body.appendChild(fullpage_pixel_container);
+
+      for (var i = 0; i < 13600; i++) {
+        var div = document.createElement('div');
+        div.className = 'fullpage_pixel';
+        fullpage_pixel_container.appendChild(div);
+      }
+
+      const fullpage_pixels = document.querySelectorAll('.fullpage_pixel');
+      const shuffled_pixels = Array.from(fullpage_pixels);
+      for (let i = shuffled_pixels.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled_pixels[i], shuffled_pixels[j]] = [shuffled_pixels[j], shuffled_pixels[i]];
+      }
+      let delay = 0.06;
+      shuffled_pixels.forEach((fullpage_pixel) => {
+        setTimeout(() => {
+          fullpage_pixel.style.background = 'transparent';
+        }, delay);
+        delay += 0.06;
+      });
+
+      setTimeout(function() {
+        fullpage_pixel_container.innerHTML = '';
+        fullpage_pixel_container.style.display = 'none';
+      }, 1000)
+
+    }, 1400);
         
   }, 7450);
 

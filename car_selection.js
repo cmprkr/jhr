@@ -9,6 +9,8 @@ var car_78_flip = document.getElementById('car_78_flip');
 var animationId_78, animationId_77;
 var currentPosition_78 = 50; // Initially set to 50
 var currentPosition_77 = 50; // Initially set to 50
+var title = document.getElementById('title');
+var choose_c = document.querySelector('.word_choose.letter_c');
 
 button_78.addEventListener('mouseover', function() {
   	cancelAnimationFrame(animationId_78); // Cancel any existing animation
@@ -106,3 +108,68 @@ function easeInOutQuad(t) {
 	  t--;
 	  return -0.5 * (t * (t - 2) - 1);
 }
+
+window.addEventListener('load', function() {
+
+	var prevWidth = window.innerWidth;
+	var prevHeight = window.innerHeight;
+
+	var car_77_width = car_77.offsetWidth;
+	var newHeight = car_77_width / 2.216494845;
+	car_77.style.height = newHeight + 'px';
+	car_78.style.height = newHeight + 'px';
+	car_77_flip.style.height = newHeight + 'px';
+	car_78_flip.style.height = newHeight + 'px';
+
+	title.style.left = (prevWidth * .025) + "px"
+	title.style.top = (prevWidth * .025) + "px"
+
+	var containers = document.querySelectorAll(".word_pixel_container");
+	var spacers = document.querySelectorAll(".word_pixel_spacer");
+
+	containers.forEach(function(container) {
+		var cHeight = choose_c.offsetHeight;
+	  	var containerWidth = container.offsetWidth;
+	  	var containerHeight = container.offsetHeight
+	  	container.style.height = (containerWidth / 6) + "px";
+
+	  	spacers.forEach(function(spacer) {
+	  		spacer.style.height = (cHeight / 5) + "px";
+	  	});
+	});
+});
+
+window.addEventListener('resize', function() {
+
+	var prevWidth = window.innerWidth;
+	var prevHeight = window.innerHeight;
+
+	var car_77_width = car_77.offsetWidth;
+	var newHeight = car_77_width / 2.216494845;
+	car_77.style.height = newHeight + 'px';
+	car_78.style.height = newHeight + 'px';
+	car_77_flip.style.height = newHeight + 'px';
+	car_78_flip.style.height = newHeight + 'px';
+
+	title.style.left = (prevWidth * .025) + "px"
+	title.style.top = (prevWidth * .025) + "px"
+
+	var containers = document.querySelectorAll(".word_pixel_container");
+	var spacers = document.querySelectorAll(".word_pixel_spacer");
+
+	containers.forEach(function(container) {
+		var cHeight = choose_c.offsetHeight;
+	  	var containerWidth = container.offsetWidth;
+	  	var containerHeight = container.offsetHeight
+	  	container.style.height = (containerWidth / 6) + "px";
+
+	  	spacers.forEach(function(spacer) {
+	  		spacer.style.height = (cHeight / 5) + "px";
+	  	});
+	});
+
+});
+
+setTimeout(function() {
+
+}, 500)
